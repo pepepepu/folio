@@ -40,6 +40,11 @@ const MediaContainer = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 768px) {
+    grid-row: 1 / 4;
+    grid-column: 1 / 4;
+  }
 `;
 
 const Blob1 = styled.div`
@@ -118,7 +123,14 @@ export function Section03() {
           <CenteredText>pedro</CenteredText>
         </MediaContainer>
 
-        <GridItem row="5" col="1 /4" justify="flex-start" align="center">
+        <GridItem
+          row="5"
+          col="1 / 4"
+          $mobileRow="4 / 6"
+          $mobileCol="1 / 4"
+          justify="flex-start"
+          align="center"
+        >
           <Text textwidth="80%" textAlign="left" fontSize="12px">
             Tudo começou com a curiosidade de entender como as coisas funcionam
             sob o capô. O que era um interesse por computadores transformou-se
@@ -130,7 +142,14 @@ export function Section03() {
           </Text>
         </GridItem>
 
-        <GridItem row="5" col="4 / 6" justify="flex-end" align="center">
+        <GridItem
+          row="5"
+          col="4 / 6"
+          $mobileRow="6 / 8"
+          $mobileCol="1 / 4"
+          justify="flex-start"
+          align="center"
+        >
           <Text textwidth="80%" textAlign="left" fontSize="12px">
             Acredito que a tecnologia deve ser invisível. O meu objetivo é criar
             produtos digitais onde o utilizador não percebe o código, apenas

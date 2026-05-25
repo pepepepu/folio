@@ -12,6 +12,15 @@ const BackgroundWrapper = styled.div`
   height: 100%;
   transform: translateX(-50%);
   z-index: -1;
+
+  @media (max-width: 768px) {
+    width: 100dvw;
+    height: 100dvh;
+    left: 0;
+    transform: none;
+    bottom: auto;
+    top: 0;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -33,6 +42,17 @@ const TextCenter = styled.p`
   &:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const ResponsiveGridItem = styled(GridItem)`
+  @media (max-width: 768px) {
+    grid-column: ${(props) => props.$mobileCol || props.col};
+    grid-row: ${(props) => props.$mobileRow || props.row};
+  }
 `;
 
 export function Section01() {
@@ -40,11 +60,9 @@ export function Section01() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-
     let ctx = gsap.context(() => {
       const tl = gsap.timeline();
       const texts = gsap.utils.toArray(".gsap-text");
-
       tl.fromTo(
         ".pepe-bg-img",
         { opacity: 0, filter: "blur(20px)", scale: 0.95 },
@@ -69,15 +87,12 @@ export function Section01() {
         "-=0.8",
       );
     }, containerRef.current);
-
     return () => ctx.revert();
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -96,22 +111,43 @@ export function Section01() {
       </BackgroundWrapper>
 
       <Box>
-        <GridItem row="1" col="3" justify="center" align="flex-start">
-          <Text className="gsap-text" fontWeight="900">
+        <ResponsiveGridItem
+          row="1"
+          col="3"
+          $mobileRow="1"
+          $mobileCol="1 / 4"
+          justify="center"
+          align="flex-start"
+        >
+          <Text className="gsap-text" fontWeight="900" textAlign="center">
             front end / ui&ux designer
           </Text>
-        </GridItem>
+        </ResponsiveGridItem>
 
-        <GridItem row="1" col="1" justify="center" align="center">
+        <ResponsiveGridItem
+          row="2"
+          col="5"
+          $mobileRow="3"
+          $mobileCol="3"
+          justify="center"
+          align="center"
+        >
           <TextCenter
             className="gsap-text"
-            onClick={() => scrollToSection("razoes")}
+            onClick={() => scrollToSection("pedro")}
           >
-            [razões]
+            [pedro]
           </TextCenter>
-        </GridItem>
+        </ResponsiveGridItem>
 
-        <GridItem row="2" col="1 / 3" justify="flex-start" align="center">
+        <ResponsiveGridItem
+          row="2"
+          col="1 / 3"
+          $mobileRow="1 / 5"
+          $mobileCol="1 / 3"
+          justify="flex-start"
+          align="center"
+        >
           <Text
             className="gsap-text"
             textwidth="100%"
@@ -122,47 +158,76 @@ export function Section01() {
             precisão do código à sensibilidade do design, criando sistemas que
             não apenas funcionam, mas se conectam.
           </Text>
-        </GridItem>
+        </ResponsiveGridItem>
 
-        <GridItem row="3" col="4" justify="center" align="center">
+        <ResponsiveGridItem
+          row="1"
+          col="1"
+          $mobileRow="1"
+          $mobileCol="3"
+          justify="center"
+          align="center"
+        >
           <TextCenter
             className="gsap-text"
-            onClick={() => scrollToSection("pedro")}
+            onClick={() => scrollToSection("razoes")}
           >
-            [pedro]
+            [razões]
           </TextCenter>
-        </GridItem>
+        </ResponsiveGridItem>
 
-        <GridItem row="4" col="4 / 6" justify="flex-end" align="center">
+        <ResponsiveGridItem
+          row="4"
+          col="4 / 6"
+          $mobileRow="5 / 8"
+          $mobileCol="2 / 4"
+          justify="flex-end"
+          align="center"
+        >
           <Text
             className="gsap-text"
             textwidth="100%"
             textAlign="right"
             fontWeight="900"
           >
-            Minha curiosidade dita a técnica, meu repertório dita o visual.
-            Transformo o que está na tela em algo que respira, funciona e,
-            principalmente, comunica. Vamos construir algo novo?
+            Mais do que criar interfaces, construo pontes entre a intenção do
+            produto e a experiência do usuário. Do pixel perfeito à performance
+            técnica, foco em transformar visão em realidade digital de alto
+            impacto. Adiante.
           </Text>
-        </GridItem>
+        </ResponsiveGridItem>
 
-        <GridItem row="4" col="1" justify="center" align="center">
+        <ResponsiveGridItem
+          row="4"
+          col="1"
+          $mobileRow="5"
+          $mobileCol="1"
+          justify="center"
+          align="center"
+        >
           <TextCenter
             className="gsap-text"
             onClick={() => scrollToSection("projetos")}
           >
             [projetos]
           </TextCenter>
-        </GridItem>
+        </ResponsiveGridItem>
 
-        <GridItem row="5" col="5" justify="center" align="center">
+        <ResponsiveGridItem
+          row="5"
+          col="5"
+          $mobileRow="7"
+          $mobileCol="1"
+          justify="center"
+          align="center"
+        >
           <TextCenter
             className="gsap-text"
             onClick={() => scrollToSection("contato")}
           >
             [contato]
           </TextCenter>
-        </GridItem>
+        </ResponsiveGridItem>
       </Box>
     </Wrapper>
   );

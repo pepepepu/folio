@@ -70,7 +70,14 @@ export function Section05() {
       </SvgFilter>
 
       <ContentBox>
-        <GridItem row="2" col="3" justify="center" align="flex-end">
+        <GridItem
+          row="2"
+          col="3"
+          $mobileRow="3"
+          $mobileCol="1/4"
+          justify="center"
+          align="flex-end"
+        >
           <Text
             textwidth="100%"
             textAlign="center"
@@ -84,11 +91,25 @@ export function Section05() {
           </Text>
         </GridItem>
 
-        <GridItem row="3" col="3" justify="center" align="center">
+        <GridItem
+          row="3"
+          col="3"
+          $mobileRow="4"
+          $mobileCol="1/4"
+          justify="center"
+          align="center"
+        >
           <GiantImage src={pepeImg} alt="" />
         </GridItem>
 
-        <GridItem row="4" col="3" justify="center" align="flex-start">
+        <GridItem
+          row="4"
+          col="3"
+          $mobileRow="5"
+          $mobileCol="1/4"
+          justify="center"
+          align="flex-start"
+        >
           <Text
             textwidth="100%"
             textAlign="center"
@@ -101,7 +122,14 @@ export function Section05() {
             front end developer • ui&ux designer
           </Text>
         </GridItem>
-        <GridItem row="1" col="1" justify="flex-start" align="flex-start">
+        <GridItem
+          row="1"
+          col="1"
+          $mobileRow="1"
+          $mobileCol="1"
+          justify="flex-start"
+          align="flex-start"
+        >
           <SocialLink
             href="https://www.linkedin.com/in/pp-oliveira/"
             target="_blank"
@@ -110,7 +138,28 @@ export function Section05() {
             <Text textTransform="lowercase">[linkedin]</Text>
           </SocialLink>
         </GridItem>
-        <GridItem row="5" col="1" justify="flex-start" align="flex-end">
+
+        <GridItem
+          row="1"
+          col="5"
+          $mobileRow="1"
+          $mobileCol="3"
+          justify="flex-end"
+          align="flex-start"
+        >
+          <SocialLink href="#" target="_blank" rel="noopener noreferrer">
+            <Text textTransform="lowercase">[lattes]</Text>
+          </SocialLink>
+        </GridItem>
+
+        <GridItem
+          row="5"
+          col="1"
+          $mobileRow="7"
+          $mobileCol="1"
+          justify="flex-start"
+          align="flex-end"
+        >
           <SocialLink
             href="https://www.behance.net/pupupepp"
             target="_blank"
@@ -119,18 +168,21 @@ export function Section05() {
             <Text textTransform="lowercase">[behance]</Text>
           </SocialLink>
         </GridItem>
-        <GridItem row="5" col="5" justify="flex-end" align="flex-end">
+
+        <GridItem
+          row="5"
+          col="5"
+          $mobileRow="7"
+          $mobileCol="3"
+          justify="flex-end"
+          align="flex-end"
+        >
           <SocialLink
             href="https://github.com/pepepepu"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Text textTransform="lowercase">[github]</Text>
-          </SocialLink>
-        </GridItem>
-        <GridItem row="1" col="5" justify="flex-end" align="flex-start">
-          <SocialLink href="#" target="_blank" rel="noopener noreferrer">
-            <Text textTransform="lowercase">[lattes]</Text>
           </SocialLink>
         </GridItem>
       </ContentBox>

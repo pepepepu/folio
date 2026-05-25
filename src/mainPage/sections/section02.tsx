@@ -13,7 +13,14 @@ const GiantP = styled.div`
   z-index: 0;
   filter: url(#wiggle-giant-p);
   pointer-events: none;
-  line-height: 0;
+  line-height: 1;
+
+  @media (max-width: 768px) {
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 100vh;
+  }
 `;
 
 const SvgFilter = styled.svg`
@@ -62,7 +69,14 @@ export function Section02() {
       <GiantP>Pp</GiantP>
 
       <Box>
-        <GridItem row="2 / 5" col="4 / 6" justify="flex-end" align="center">
+        <GridItem
+          row="2 / 5"
+          col="4 / 6"
+          $mobileRow="2 / 6"
+          $mobileCol="1 / 4"
+          justify="flex-end"
+          align="center"
+        >
           <Text
             textwidth="100%"
             textAlign="right"
@@ -89,8 +103,15 @@ export function Section02() {
           </Text>
         </GridItem>
 
-        <GridItem row="5" col="1/6" justify="center" align="center">
-          <Text color={theme.colors.black} fontWeight="500">
+        <GridItem
+          row="5"
+          col="1/6"
+          $mobileRow="6 / 8"
+          $mobileCol="1 / 4"
+          justify="center"
+          align="center"
+        >
+          <Text color={theme.colors.black} fontWeight="500" textAlign="center">
             UX é sobre percepção. UI é sobre intenção. O meu código é a ponte
             que une o sentir ao ver.
           </Text>
