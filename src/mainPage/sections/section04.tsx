@@ -22,6 +22,11 @@ const BlurredCircle = styled.div<{ $bgColor: string; $circleSize: string }>`
     background-color 0.8s ease,
     width 0.8s ease,
     height 0.8s ease;
+
+  @media (max-width: 768px) {
+    width: calc(${({ $circleSize }) => $circleSize} * 2.5);
+    height: calc(${({ $circleSize }) => $circleSize} * 2.5);
+  }
 `;
 
 const CenterStretchedTextWrapper = styled.div`
@@ -30,6 +35,11 @@ const CenterStretchedTextWrapper = styled.div`
   transform-origin: center;
   will-change: filter, opacity;
   transition: opacity 0.3s ease;
+  z-index: -1;
+
+  @media (max-width: 768px) {
+    transform: scale(1, 1);
+  }
 `;
 
 const AnimWrapper = styled.div`
@@ -111,7 +121,42 @@ export function Section04() {
       />
 
       <Box>
-        <GridItem row="2" col="2" justify="start" align="flex-start">
+        <GridItem
+          row="1/3"
+          col="3"
+          $mobileRow="1 / 3"
+          $mobileCol="1 / 4"
+          justify="center"
+          align="center"
+        >
+          <AnimWrapper className="gsap-fog">
+            <Text
+              $hideOnMobile
+              textwidth="50%"
+              $mobileTextWidth="100%"
+              textAlign="justify"
+              $mobileTextAlign="center"
+              fontWeight="900"
+              fontSize="12px"
+              $mobileFontSize="14px"
+            >
+              A robustez técnica é o que sustenta a visão. Utilizo React.js,
+              Next.js e TypeScript para arquitetar soluções escaláveis, focadas
+              em performance e código limpo. Do back-end em Node.js à camada de
+              interface, cada linha é pensada para garantir precisão e uma
+              experiência digital sem atritos.
+            </Text>
+          </AnimWrapper>
+        </GridItem>
+
+        <GridItem
+          row="2"
+          col="2"
+          $mobileRow="3"
+          $mobileCol="1 / 4"
+          justify="start"
+          align="flex-start"
+        >
           <AnimWrapper className="gsap-fog parallax-item" data-speed="40">
             <StretchedLink
               text="aura"
@@ -123,7 +168,14 @@ export function Section04() {
           </AnimWrapper>
         </GridItem>
 
-        <GridItem row="3/5" col="1/2" justify="center" align="center">
+        <GridItem
+          row="3/5"
+          col="1/2"
+          $mobileRow="4"
+          $mobileCol="1 / 4"
+          justify="center"
+          align="center"
+        >
           <AnimWrapper className="gsap-fog parallax-item" data-speed="-30">
             <StretchedLink
               text="portal do servidor"
@@ -137,7 +189,14 @@ export function Section04() {
           </AnimWrapper>
         </GridItem>
 
-        <GridItem row="4" col="4" justify="flex-end" align="flex-start">
+        <GridItem
+          row="4"
+          col="4"
+          $mobileRow="5"
+          $mobileCol="1 / 4"
+          justify="flex-end"
+          align="flex-start"
+        >
           <AnimWrapper className="gsap-fog parallax-item" data-speed="60">
             <StretchedLink
               text="zine"
@@ -151,7 +210,14 @@ export function Section04() {
           </AnimWrapper>
         </GridItem>
 
-        <GridItem row="1/3" col="5" justify="flex-end" align="center">
+        <GridItem
+          row="1/3"
+          col="5"
+          $mobileRow="6"
+          $mobileCol="1 / 4"
+          justify="flex-end"
+          align="center"
+        >
           <AnimWrapper className="gsap-fog parallax-item" data-speed="-45">
             <StretchedLink
               text="sistema de gestão de demandas"
@@ -165,31 +231,23 @@ export function Section04() {
           </AnimWrapper>
         </GridItem>
 
-        <GridItem row="1/3" col="3" justify="center" align="center">
-          <AnimWrapper className="gsap-fog">
-            <Text
-              textwidth="50%"
-              textAlign="justify"
-              fontWeight="900"
-              fontSize="12px"
-            >
-              A robustez técnica é o que sustenta a visão. Utilizo React.js,
-              Next.js e TypeScript para arquitetar soluções escaláveis, focadas
-              em performance e código limpo. Do back-end em Node.js à camada de
-              interface, cada linha é pensada para garantir precisão e uma
-              experiência digital sem atritos.
-            </Text>
-          </AnimWrapper>
-        </GridItem>
-
-        <GridItem row="3" col="2/5" justify="center" align="center">
+        <GridItem
+          row="3"
+          col="2/5"
+          $mobileRow="1 / 3"
+          $mobileCol="1 / 4"
+          justify="center"
+          align="center"
+        >
           <CenterStretchedTextWrapper className="gsap-fog">
             <Text
               textwidth="100%"
               textAlign="center"
+              $mobileTextAlign="center"
               fontFamily={theme.fonts.stackSansText}
               fontWeight="100"
               fontSize="3rem"
+              $mobileFontSize="3.5rem"
               letterSpacing="-3px"
               textTransform="lowercase"
             >
@@ -198,19 +256,27 @@ export function Section04() {
           </CenterStretchedTextWrapper>
         </GridItem>
 
-        <GridItem row="4/6" col="3" justify="center" align="center">
+        <GridItem
+          row="4/6"
+          col="3"
+          $mobileRow="7"
+          $mobileCol="1 / 4"
+          justify="center"
+          align="center"
+        >
           <AnimWrapper className="gsap-fog">
             <Text
               textwidth="50%"
+              $mobileTextWidth="100%"
               textAlign="justify"
+              $mobileTextAlign="center"
               fontWeight="900"
               fontSize="12px"
+              $mobileFontSize="14px"
             >
-              O design é minha linguagem de conexão. Através do Figma e Adobe
-              Creative Cloud, prototipo experiências que ganham vida com motion
-              e gráficos vetoriais. Transformo interfaces em produtos orgânicos,
-              unindo a sensibilidade visual à fluidez técnica, do conceito
-              estático até a interação final que o usuário sente.
+              Transformo interfaces em produtos orgânicos, unindo a
+              sensibilidade visual à fluidez técnica, do conceito estático até a
+              interação final que o usuário sente.
             </Text>
           </AnimWrapper>
         </GridItem>

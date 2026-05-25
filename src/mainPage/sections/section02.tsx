@@ -17,9 +17,10 @@ const GiantP = styled.div`
 
   @media (max-width: 768px) {
     top: 50%;
-    left: -50%;
+    left: -20%;
     transform: translate(-50%, -50%);
-    font-size: 100vh;
+    font-size: 80vh;
+    opacity: 1;
   }
 `;
 
@@ -72,12 +73,13 @@ export function Section02() {
         <GridItem
           row="2 / 5"
           col="4 / 6"
-          $mobileRow="2 / 6"
+          $mobileRow="1 / 5"
           $mobileCol="1 / 4"
-          justify="flex-end"
+          justify="center"
           align="center"
         >
           <Text
+            $hideOnMobile
             textwidth="100%"
             textAlign="right"
             color={theme.colors.black}
@@ -85,9 +87,8 @@ export function Section02() {
           >
             Todo processo criativo nasce de um ponto de origem. Para mim, esse
             ponto é o <strong>P</strong>. Mais do que a inicial do meu nome, ele
-            dita o ritmo da minha execução:
-            <strong>Propósito</strong>, <strong>Processo</strong> e{" "}
-            <strong>Performance</strong>.
+            dita o ritmo da minha execução: <strong>Propósito</strong>,{" "}
+            <strong>Processo</strong> e <strong>Performance</strong>.
             <br />
             <br />O <strong>Propósito</strong> é o que ancora o design, a
             intenção por trás de cada pixel. O <strong>Processo</strong> é onde
@@ -101,17 +102,40 @@ export function Section02() {
             preciso que seja construído com precisão para que a experiência seja
             impecável, do carregamento à interação final.
           </Text>
+
+          <Text
+            $hideOnDesktop
+            textwidth="100%"
+            textAlign="center"
+            $mobileTextAlign="center"
+            color={theme.colors.black}
+            fontWeight="500"
+            fontSize="14px"
+          >
+            Todo processo criativo nasce da união entre{" "}
+            <strong>Propósito</strong>, <strong>Processo</strong> e{" "}
+            <strong>Performance</strong>.
+            <br />
+            <br />A intenção por trás do design e a fluidez do código precisam
+            coexistir para garantir que a experiência final seja orgânica e
+            impecável.
+          </Text>
         </GridItem>
 
         <GridItem
           row="5"
           col="1/6"
-          $mobileRow="6 / 8"
+          $mobileRow="5 / 8"
           $mobileCol="1 / 4"
           justify="center"
           align="center"
         >
-          <Text color={theme.colors.black} fontWeight="500" textAlign="center">
+          <Text
+            color={theme.colors.black}
+            fontWeight="500"
+            textAlign="center"
+            $mobileTextAlign="center"
+          >
             UX é sobre percepção. UI é sobre intenção. O meu código é a ponte
             que une o sentir ao ver.
           </Text>

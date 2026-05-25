@@ -7,6 +7,13 @@ const LinkContainer = styled.a`
   cursor: pointer;
   padding-right: 15px;
   will-change: filter, opacity;
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 const StretchedText = styled.span<{
@@ -25,6 +32,11 @@ const StretchedText = styled.span<{
   letter-spacing: -0.06em;
   transform-origin: center;
   line-height: 0.8;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 2.5rem;
+  }
 `;
 
 interface StretchedLinkProps {

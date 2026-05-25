@@ -126,31 +126,45 @@ export function Section03() {
         <GridItem
           row="5"
           col="1 / 4"
-          $mobileRow="4 / 6"
+          $mobileRow="4 / 8"
           $mobileCol="1 / 4"
-          justify="flex-start"
+          justify="center"
           align="center"
         >
-          <Text textwidth="80%" textAlign="left" fontSize="12px">
+          <Text
+            textwidth="80%"
+            $mobileTextWidth="100%"
+            textAlign="left"
+            $mobileTextAlign="center"
+            fontSize="12px"
+            $mobileFontSize="14px"
+          >
             Tudo começou com a curiosidade de entender como as coisas funcionam
-            sob o capô. O que era um interesse por computadores transformou-se
-            numa obsessão por construir interfaces que respirem. A minha
-            trajetória foi moldada pela união entre a precisão do front-end e a
-            sensibilidade do design. Domino o ecossistema React, Next.js e
-            TypeScript, mas é o pensamento de UX que dita o tom: se não for
-            útil, se não trouxer clareza, não deve estar no produto.
+            sob o capô. A minha trajetória foi moldada pela união entre a
+            precisão do front-end e a sensibilidade do design. Domino o
+            ecossistema React, Next.js e TypeScript, mas é o pensamento de UX
+            que dita o tom: se não for útil, se não trouxer clareza, não deve
+            estar no produto.
           </Text>
         </GridItem>
 
         <GridItem
           row="5"
           col="4 / 6"
-          $mobileRow="6 / 8"
-          $mobileCol="1 / 4"
-          justify="flex-start"
+          $mobileRow="8"
+          $mobileCol="1"
+          justify="center"
           align="center"
         >
-          <Text textwidth="80%" textAlign="left" fontSize="12px">
+          <Text
+            $hideOnMobile
+            textwidth="80%"
+            $mobileTextWidth="100%"
+            textAlign="left"
+            $mobileTextAlign="center"
+            fontSize="12px"
+            $mobileFontSize="14px"
+          >
             Acredito que a tecnologia deve ser invisível. O meu objetivo é criar
             produtos digitais onde o utilizador não percebe o código, apenas
             sente a eficiência. Não sou apenas um desenvolvedor; sou alguém que
