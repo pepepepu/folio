@@ -23,7 +23,6 @@ const StretchedText = styled.span<{
   text-align: ${({ $textAlign }) => $textAlign};
   text-transform: lowercase;
   letter-spacing: -0.06em;
-  transform: scale(0.5, 2);
   transform-origin: center;
   line-height: 0.8;
 `;

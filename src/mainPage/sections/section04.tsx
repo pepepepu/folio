@@ -127,9 +127,9 @@ export function Section04() {
           <AnimWrapper className="gsap-fog parallax-item" data-speed="-30">
             <StretchedLink
               text="portal do servidor"
-              weight={"300"}
+              weight={"200"}
               href="https://musical-aura.vercel.app/"
-              size="4rem"
+              size="3rem"
               textAlign="left"
               onMouseEnter={() => setHoveredProject("portal")}
               onMouseLeave={() => setHoveredProject("default")}
@@ -157,7 +157,7 @@ export function Section04() {
               text="sistema de gestão de demandas"
               weight={"400"}
               href="https://musical-aura.vercel.app/"
-              size="2.5rem"
+              size="2rem"
               textAlign="right"
               onMouseEnter={() => setHoveredProject("sistema")}
               onMouseLeave={() => setHoveredProject("default")}
